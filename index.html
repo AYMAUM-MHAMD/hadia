@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ar">
+  <!-- Mirrored from htmldemo.net/flosun/flosun/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2022 05:03:14 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Hadia</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/Icon-Hadia.svg"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Tajawal:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lateef&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS
+	============================================ -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/font.awesome.min.css" />
+    <!-- Linear Icons CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/linearicons.min.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
+
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css" />
+    <!-- Jquery ui CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css" />
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/nice-select.min.css" />
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css" />
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Swiper CSS -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    /> -->
+    <style>
+      .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        gap: 8px;
+      }
+
+      .pagination li {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .pagination li a {
+        display: block;
+        padding: 6px 12px;
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .pagination li.current a {
+        background: #ff6f61;
+        color: #fff;
+        border-color: #ff6f61;
+      }
+
+      .pagination li.disabled a {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .pagination li:hover a:not(.disabled) {
+        background: #f2f2f2;
+      }
+
+      .modal-product-gallery .main-image {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .modal-product-gallery .main-image img {
+        max-height: 350px;
+        object-fit: contain;
+      }
+
+      .thumbnail-images img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: border 0.3s;
+      }
+
+      .thumbnail-images img:hover,
+      .thumbnail-images img.active {
+        border-color: #ff6f61;
+      }
+
+      /* الصورة الرئيسية */
+      .modal-product-gallery .main-image img {
+        border-radius: 10px;
+        max-height: 400px;
+        object-fit: contain;
+      }
+
+      /* الصور المصغرة */
+      .modal-product-gallery .thumbnail-images {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+      }
+      .modal-product-gallery .thumbnail-images img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .modal-product-gallery .thumbnail-images img.active {
+        border-color: #ff4081;
+        transform: scale(1.05);
+      }
+      .shop-card {
+        display: contents;
+      }
+      .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        gap: 8px;
+      }
+
+      .pagination li {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .pagination li a {
+        display: block;
+        padding: 6px 12px;
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .pagination li.current a {
+        background: #ff6f61;
+        color: #fff;
+        border-color: #ff6f61;
+      }
+
+      .pagination li.disabled a {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .pagination li:hover a:not(.disabled) {
+        background: #f2f2f2;
+      }
+
+      .modal-product-gallery .main-image {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .modal-product-gallery .main-image img {
+        max-height: 350px;
+        object-fit: contain;
+      }
+
+      .thumbnail-images img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: border 0.3s;
+      }
+
+      .thumbnail-images img:hover,
+      .thumbnail-images img.active {
+        border-color: #ff6f61;
+      }
+
+      /* الصورة الرئيسية */
+      .modal-product-gallery .main-image img {
+        border-radius: 10px;
+        max-height: 400px;
+        object-fit: contain;
+      }
+
+      /* الصور المصغرة */
+      .modal-product-gallery .thumbnail-images {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+      }
+      .modal-product-gallery .thumbnail-images img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .modal-product-gallery .thumbnail-images img.active {
+        border-color: #ff4081;
+        transform: scale(1.05);
+      }
+      .shop-card {
+        display: contents;
+      }
+
+      .single_item {
+        gap: 15px;
+      }
+
+      .Cart-card {
+        max-height: 300px; /* الحد الأقصى للطول */
+        overflow-y: auto; /* إضافة شريط تمرير عمودي عند تجاوز المحتوى */
+        padding: 5px; /* مسافة داخلية بسيطة */
+      }
+      .search-results {
+        max-height: 300px; /* الحد الأقصى للطول */
+        overflow-y: auto; /* إضافة شريط تمرير عمودي عند تجاوز المحتوى */
+        padding: 5px; /* مسافة داخلية بسيطة */
+        border: 1px solid #ccc; /* إطار خفيف للفصل عن الصفحة */
+        border-radius: 5px; /* زوايا دائرية خفيفة */
+        background-color: #fff; /* خلفية بيضاء */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+        z-index: 999;
+      }
+
+      /* تحسين الفوتر على الشاشات الصغيرة */
+      @media (max-width: 576px) {
+        footer .single-footer-widget {
+          text-align: center !important;
+        }
+
+        footer .single-footer-widget h2.widget-title {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+
+        footer .widget-list li {
+          margin-bottom: 6px;
+        }
+
+        footer .widget-list a {
+          font-size: 15px;
+        }
+
+        footer address {
+          font-size: 14px;
+          line-height: 1.8;
+        }
+
+        footer .social-links ul {
+          justify-content: center !important;
+          gap: 8px;
+        }
+
+        footer .social-links a {
+          width: 32px;
+          height: 32px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #ddd;
+        }
+      }
+
+      /* تحسين ظهور السهم للقائمة الفرعية */
+      .mobile-menu .menu-item-has-children > a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* ضبط القوائم الفرعية */
+      .mobile-menu .dropdown {
+        padding-right: 15px;
+        border-right: 2px solid #eee;
+      }
+
+      .pagination .page-link.disabled {
+        pointer-events: none;
+        opacity: 0.4;
+      }
+
+      .pagination .page-link.active {
+        background: #007bff;
+        color: white !important;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Area Start Here -->
+    <header class="main-header-area">
+      <!-- Main Header Area Start -->
+      <div class="main-header header-transparent header-sticky">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-lg-2 col-xl-2 col-md-6 col-6 col-custom">
+              <div class="header-logo d-flex align-items-center">
+                <a href="index.html">
+                  <!-- src="assets/images/logo/logo.png" -->
+                  <img
+                    class="img-full"
+                    src="assets/images/logo/logo-Hadia.svg"
+                    alt="Header Logo"
+                  />
+                </a>
+              </div>
+            </div>
+            <div
+              class="col-lg-8 d-none d-lg-flex justify-content-center col-custom"
+            >
+              <nav class="main-nav d-none d-lg-flex">
+                <ul class="nav">
+                  <li>
+                    <a class="active" href="index.html">
+                      <span class="menu-text">الصفحة الرئيسية</span>
+                      <!-- <i class="fa fa-angle-down"></i> -->
+                    </a>
+                    <!-- <ul class="dropdown-submenu dropdown-hover">
+                      <li>
+                        <a class="active" href="index.html">Home Page - 1</a>
+                      </li>
+                    </ul> -->
+                  </li>
+                  <li>
+                    <a href="shop-fullwidth.html">
+                      <span class="menu-text">المنتجات</span>
+                      <!-- <i class="fa fa-angle-down"></i> -->
+                    </a>
+                    <!-- <div class="mega-menu dropdown-hover">
+                      <div class="menu-colum">
+                        <ul>
+                          <li><span class="mega-menu-text">Shop</span></li>
+                          <li>
+                            <a href="shop-fullwidth.html">Shop Full Width</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu-colum">
+                        <ul>
+                          <li><span class="mega-menu-text">Product</span></li>
+                          <li>
+                            <a href="product-details.html">Single Product</a>
+                          </li>
+                          <li>
+                            <a href="variable-product-details.html"
+                              >Variable Product</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu-colum">
+                        <ul>
+                          <li><span class="mega-menu-text">Others</span></li>
+                          <li><a href="error-404.html">Error 404</a></li>
+                          <li><a href="cart.html">Cart Page</a></li>
+                          <li><a href="checkout.html">Checkout Page</a></li>
+                        </ul>
+                      </div>
+                    </div> -->
+                  </li>
+                  <!-- <li>
+                    <a href="blog-grid-fullwidth.html">
+                      <span class="menu-text"> Blog</span>
+                      <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-submenu dropdown-hover">
+                      <li>
+                        <a href="blog-grid-fullwidth.html"
+                          >Blog Grid Fullwidth</a
+                        >
+                      </li>
+                      <li>
+                        <a href="blog-details-fullwidth.html"
+                          >Blog Details Fullwidth</a
+                        >
+                      </li>
+                    </ul>
+                  </li> -->
+                  <li>
+                    <a href="about-us.html">
+                      <span class="menu-text">من نحن</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="contact-us.html">
+                      <span class="menu-text">اتصل بنا</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="menu-text">صفحات</span>
+                      <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul
+                      class="dropdown-submenu dropdown-hover"
+                      lang="ar"
+                      dir="rtl"
+                    >
+                      <li><a href="my-account.html">حسابي</a></li>
+                      <li>
+                        <a href="frequently-questions.html">أسئلة شائعة</a>
+                      </li>
+                      <li><a href="login.html">تسجيل الدخول</a></li>
+                      <li><a href="register.html">إنشاء حساب</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-lg-2 col-md-6 col-6 col-custom">
+              <div
+                class="header-right-area main-nav"
+                dir="rtl"
+                style="display: flex; justify-content: flex-start"
+              >
+                <ul class="nav" style="gap: 15px">
+                  <!-- السلة -->
+                  <li class="sidemenu-wrap">
+                    <a
+                      href="cart.html"
+                      class="minicart-btn toolbar-btn"
+                      style="position: relative"
+                    >
+                      <i
+                        class="fa fa-shopping-cart"
+                        style="
+                          position: absolute;
+                          z-index: 10;
+                          left: 3px;
+                          top: 0;
+                        "
+                      ></i>
+                      <span
+                        class="cart-item_count"
+                        style="
+                          z-index: 5;
+                          position: absolute;
+                          top: -13px;
+                          left: 15px;
+                          background: #e72463;
+                          color: #fff;
+                          border-radius: 700px;
+                          padding-right: 6px;
+                          padding-left: 6px;
+                          font-size: 12px;
+                        "
+                        >0</span
+                      >
+                    </a>
+                    <ul
+                      class="dropdown-sidemenu dropdown-hover-2 dropdown-cart"
+                      dir="rtl"
+                      style="
+                        @media (max-width: 480px) {
+                          display: flex;
+                          justify-content: space-around;
+                        }
+                      "
+                    >
+                      <li>
+                        <div class="cart-item-wrapper">
+                          <!-- العناصر داخل السلة -->
+                          <div class="mini-cart-items Cart-card"></div>
+
+                          <!-- الإجمالي -->
+                          <div
+                            class="cart-price-total d-flex justify-content-between"
+                          >
+                            <h5>الإجمالي :</h5>
+                            <h5 class="mini-cart-total">0 د.ل</h5>
+                          </div>
+
+                          <!-- روابط السلة -->
+                          <div
+                            class="cart-links d-flex justify-content-between"
+                          >
+                            <a
+                              class="btn product-cart button-icon flosun-button dark-btn"
+                              href="cart.html"
+                              style="padding: 0 25px"
+                            >
+                              عرض السلة
+                            </a>
+                            <a
+                              class="btn flosun-button secondary-btn rounded-0"
+                              href="checkout.html"
+                            >
+                              إتمام الشراء
+                            </a>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <!-- البحث -->
+                  <li class="sidemenu-wrap" style="margin: 0">
+                    <a href="#"><i class="fa fa-search"></i> </a>
+                    <ul
+                      class="dropdown-sidemenu dropdown-hover-2 dropdown-search"
+                    >
+                      <li>
+                        <form action="#">
+                          <input
+                            name="search"
+                            id="search"
+                            placeholder="ابحث هنا ..."
+                            type="text"
+                          />
+                          <button type="submit">
+                            <i class="fa fa-search"></i>
+                          </button>
+                        </form>
+                        <div
+                          class="cart-item-wrapper dropdown-sidemenu dropdown-hover-2 search-results"
+                        >
+                          <!-- <div class="single-cart-item">
+                            <div class="cart-img" style="margin-left: 15px">
+                              <a href="cart.html"
+                                ><img
+                                  src="assets/images/cart/1.jpg"
+                                  alt="صورة المنتج"
+                              /></a>
+                            </div>
+                            <div class="cart-text">
+                              <h5 class="title">
+                                <a href="cart.html">زهرة بيضاء صغيرة</a>
+                              </h5>
+                              <div class="cart-text-btn">
+                                <div class="cart-qty">
+                                  <span class="cart-price">$98.00</span>
+                                </div>
+                                <button type="button">
+                                  <i class="ion-trash-b"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div> -->
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <!-- زر الموبايل -->
+                  <li class="mobile-menu-btn d-lg-none">
+                    <a class="off-canvas-btn" href="#">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main Header Area End -->
+      <!-- off-canvas menu start -->
+      <aside class="off-canvas-wrapper" id="mobileMenu">
+        <div class="off-canvas-overlay"></div>
+        <div class="off-canvas-inner-content">
+          <div class="btn-close-off-canvas">
+            <i class="fa fa-times"></i>
+          </div>
+          <div class="off-canvas-inner">
+            <!-- mobile menu start -->
+            <div class="mobile-navigation">
+              <!-- mobile menu navigation start -->
+              <nav>
+                <ul class="mobile-menu" lang="ar" dir="rtl">
+                  <li><a href="index.html">الصفحة الرئيسية</a></li>
+                  <li><a href="shop-fullwidth.html">المنتجات</a></li>
+                  <li><a href="about-us.html">من نحن</a></li>
+                  <li><a href="contact-us.html">اتصل بنا</a></li>
+
+                  <li class="menu-item-has-children">
+                    <a href="#" style="margin-right: 10px"
+                      >صفحات <i class="fa fa-angle-down"></i
+                    ></a>
+                    <ul class="dropdown">
+                      <li><a href="my-account.html">حسابي</a></li>
+                      <li>
+                        <a href="frequently-questions.html">أسئلة شائعة</a>
+                      </li>
+                      <li><a href="login.html">تسجيل الدخول</a></li>
+                      <li><a href="register.html">إنشاء حساب</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+              <!-- mobile menu navigation end -->
+            </div>
+            <!-- mobile menu end -->
+          </div>
+        </div>
+      </aside>
+      <!-- off-canvas menu end -->
+    </header>
+    <!-- Header Area End Here -->
+    <!-- Slider/Intro Section Start -->
+    <div class="intro11-slider-wrap section">
+      <div class="intro11-slider swiper-container">
+        <div class="swiper-wrapper">
+          <div
+            class="intro11-section swiper-slide slide-1 slide-bg-1 bg-position"
+          >
+            <!-- Intro Content Start -->
+            <div
+              class="intro11-content text-left text-left-ar"
+              lang="ar"
+              dir="rtl"
+            >
+              <h3 class="title-slider text-uppercase">الأكثر رواجاً</h3>
+              <h2 class="title">
+                موضة الزهور والهدايا <span id="year"></span>
+              </h2>
+              <p class="desc-content" style="font-size: 20px">
+                اكتشف أحدث تصاميم تغليف الزهور والهدايا التي تضيف لمسة من
+                الأناقة والتميز لكل مناسبة.
+              </p>
+              <a
+                href="product-details.html"
+                class="btn flosun-button secondary-btn theme-color rounded-0"
+                >تسوق الآن</a
+              >
+            </div>
+            <!-- Intro Content End -->
+          </div>
+          <div
+            class="intro11-section swiper-slide slide-2 slide-bg-1 bg-position"
+          >
+            <!-- Intro Content Start -->
+            <div
+              class="intro11-content text-left text-left-ar"
+              lang="ar"
+              dir="rtl"
+            >
+              <h3 class="title-slider black-slider-title text-uppercase">
+                مجموعتنا
+              </h3>
+              <h2 class="title">باقات ورود وهدايا</h2>
+              <p class="desc-content" style="font-size: 20px; color: white">
+                قدّم لأحبتك لحظات لا تُنسى مع باقات الزهور المميزة وتغليف
+                الهدايا الفاخر المصمم خصيصاً ليليق بذوقك.
+              </p>
+              <a
+                href="product-details.html"
+                class="btn flosun-button secondary-btn rounded-0"
+                >تسوق الآن</a
+              >
+            </div>
+            <!-- Intro Content End -->
+          </div>
+        </div>
+        <!-- Slider Navigation -->
+        <div class="home1-slider-prev swiper-button-prev main-slider-nav">
+          <i class="lnr lnr-arrow-left"></i>
+        </div>
+        <div class="home1-slider-next swiper-button-next main-slider-nav">
+          <i class="lnr lnr-arrow-right"></i>
+        </div>
+        <!-- Slider pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <!-- Slider/Intro Section End -->
+    <!--Section Title Start-->
+    <div class="col-12 col-custom" style="margin-top: 150px">
+      <div class="section-title text-center mb-30">
+        <span
+          lang="ar"
+          dir="rtl"
+          style="
+            font-family: Lateef, cursive;
+            font-size: 35px;
+            font-weight: 500;
+          "
+          class="section-title-1"
+          >ستجد هدايا رائعة في</span
+        >
+        <h3
+          lang="ar"
+          dir="rtl"
+          style="
+            font-family: Scheherazade New, serif;
+            font-size: 50px;
+            font-weight: 500;
+          "
+          class="section-title-3"
+        >
+          معرض اعمالنا
+        </h3>
+      </div>
+    </div>
+    <!--Section Title End-->
+    <!--Categories Area Start-->
+    <div class="categories-area pt-40">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="cat-1 col-md-4 col-sm-12 col-custom">
+            <div class="categories-img mb-30">
+              <a href="#"><img src="assets/images/category/i1.svg" alt="" /></a>
+              <!-- <div class="categories-content">
+                <h3>Potted Plant</h3>
+                <h4>18 items</h4>
+              </div> -->
+            </div>
+          </div>
+          <div class="cat-2 col-md-8 col-sm-12 col-custom">
+            <div class="row">
+              <div class="cat-3 col-md-7 col-custom">
+                <div class="categories-img mb-30">
+                  <a href="#"
+                    ><img src="assets/images/category/i2.svg" alt=""
+                  /></a>
+                  <!-- <div class="categories-content">
+                    <h3>Potted Plant</h3>
+                    <h4>18 items</h4>
+                  </div> -->
+                </div>
+              </div>
+              <div class="cat-4 col-md-5 col-custom">
+                <div class="categories-img mb-30">
+                  <a href="#"
+                    ><img src="assets/images/category/i3.svg" alt=""
+                  /></a>
+                  <!-- <div class="categories-content">
+                    <h3>Potted Plant</h3>
+                    <h4>18 items</h4>
+                  </div> -->
+                </div>
+              </div>
+              <div class="cat-5 col-md-4 col-custom">
+                <div class="categories-img mb-30">
+                  <a href="#"
+                    ><img src="assets/images/category/i4.svg" alt=""
+                  /></a>
+                  <!-- <div class="categories-content">
+                    <h3>Potted Plant</h3>
+                    <h4>18 items</h4>
+                  </div> -->
+                </div>
+              </div>
+              <div class="cat-6 col-md-8 col-custom">
+                <div class="categories-img mb-30">
+                  <a href="#"
+                    ><img src="assets/images/category/i7.svg" alt=""
+                  /></a>
+                  <!-- <div class="categories-content">
+                    <h3>Potted Plant</h3>
+                    <h4>18 items</h4>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Categories Area End-->
+    <!--Product Area Start-->
+    <div class="product-area mt-text-2">
+      <div class="container custom-area-2 overflow-hidden">
+        <div class="row">
+          <!--Section Title Start-->
+          <div class="col-12 col-custom">
+            <div class="section-title text-center mb-30">
+              <span
+                lang="ar"
+                dir="rtl"
+                style="
+                  font-family: Lateef, cursive;
+                  font-size: 35px;
+                  font-weight: 500;
+                "
+                class="section-title-1"
+                >هدية رائعة</span
+              >
+              <h3
+                lang="ar"
+                dir="rtl"
+                style="
+                  font-family: Scheherazade New, serif;
+                  font-size: 50px;
+                  font-weight: 500;
+                "
+                class="section-title-3"
+              >
+                المنتجات المميزة
+              </h3>
+            </div>
+          </div>
+          <!--Section Title End-->
+        </div>
+        <div class="row product-row">
+          <div class="col-12 col-custom">
+            <div class="product-slider anime-element-multi">
+              <div
+                class="products-grid"
+                id="featured-products"
+                style="display: flex; justify-content: center; flex-wrap: wrap"
+              >
+                <!-- المنتجات ستُضاف هنا ديناميكياً -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Product Area End-->
+
+    <!--Single Product-->
+    <!-- <div class="product-card">
+                  <div class="product-image">
+                    <a href="product-details.html">
+                      <img
+                        src="assets/images/product/1.jpg"
+                        alt="Flowers daisy pink stick"
+                      />
+                    </a>
+                  </div>
+                  <div class="product-content">
+                    <h4 class="product-title">
+                      <a href="product-details.html"
+                        >Flowers daisy pink stick</a
+                      >
+                    </h4>
+                    <div class="price-box">
+                      <span class="regular-price">$79.00</span>
+                    </div>
+                    <a href="cart.html" class="btn product-cart">Add to Cart</a>
+                  </div>
+                </div> -->
+    <!-- Product Countdown Area Start Here -->
+    <div class="product-countdown-area mt-text-3" style="border-radius: 12px">
+      <div class="container custom-area" style="display: flex-column">
+        <div class="row">
+          <!--Section Title Start-->
+          <div class="col-12 col-custom">
+            <div class="section-title text-center mb-30">
+              <span
+                lang="ar"
+                dir="rtl"
+                style="
+                  font-family: Lateef, cursive;
+                  font-size: 35px;
+                  font-weight: 500;
+                "
+                class="section-title-1"
+                >أختيارك الاول</span
+              >
+              <h3
+                lang="ar"
+                dir="rtl"
+                style="
+                  font-family: Scheherazade New, serif;
+                  font-size: 50px;
+                  font-weight: 500;
+                "
+                class="section-title-3"
+              >
+                المنتجات الاكثر مبيعاً
+              </h3>
+            </div>
+          </div>
+          <!--Section Title End-->
+        </div>
+        <div class="row product-row">
+          <div class="col-12 col-custom">
+            <div class="product-slider anime-element-multi">
+              <div
+                class="products-grid"
+                id="best-selling-products"
+                style="display: flex; justify-content: center; flex-wrap: wrap"
+              >
+                <!-- المنتجات ستُضاف هنا ديناميكياً -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product Countdown Area End Here -->
+    <!-- History Area Start Here -->
+    <div class="our-history-area pt-text-3">
+      <div class="container">
+        <div class="row">
+          <!--Section Title Start-->
+          <div class="col-12">
+            <div class="section-title text-center mb-30">
+              <span
+                lang="ar"
+                dir="rtl"
+                style="
+                  font-family: Lateef, cursive;
+                  font-size: 35px;
+                  font-weight: 500;
+                "
+                class="section-title-1"
+                >قصة قصيرة عنا</span
+              >
+              <h3
+                lang="ar"
+                dir="rtl"
+                style="
+                  font-family: Scheherazade New, serif;
+                  font-size: 60px;
+                  font-weight: 500;
+                "
+                class="section-title-3"
+              >
+                تاريخنا
+              </h3>
+            </div>
+          </div>
+          <!--Section Title End-->
+        </div>
+        <div class="row">
+          <div class="col-lg-8 ms-auto me-auto">
+            <div class="history-area-content pb-0 mb-0 border-0 text-center">
+              <p>
+                <strong lang="ar" dir="rtl"
+                  >بدأ شغفنا من لحظة إدراكنا أن الزهور ليست مجرد تفاصيل جميلة،
+                  بل هي لغة تحمل مشاعر عميقة تعبر عن الحب والامتنان والفرح. من
+                  هنا وُلدت فكرتنا لتقديم متجر إلكتروني متخصص في تغليف الزهور
+                  والهدايا، حيث نجمع بين الأناقة واللمسة الشخصية لنصنع تجربة لا
+                  تُنسى لكل مناسبة.
+                </strong>
+              </p>
+              <p lang="ar" dir="rtl">
+                بدأنا التفكير في أطلق متجرنا الإلكتروني في عام 2023 برؤية بسيطة:
+                أن نجعل كل هدية تُروى كقصة خاصة. ومنذ ذلك الوقت، سعينا إلى تطوير
+                أسلوبنا في تغليف الزهور والهدايا باحترافية وذوق رفيع، لنلبي
+                احتياجات عملائنا ونحول مناسباتهم إلى لحظات استثنائية تُحفظ في
+                الذاكرة.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- History Area End Here -->
+    <!-- Banner Area Start Here -->
+    <div class="banner-area mt-text-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4 col-custom">
+            <!--Single Banner Area Start-->
+            <div class="single-banner hover-style mb-30">
+              <div class="banner-img">
+                <a href="#">
+                  <img src="assets/images/banner/im1.svg" alt="" />
+                  <div class="overlay-1"></div>
+                </a>
+              </div>
+            </div>
+            <!--Single Banner Area End-->
+          </div>
+          <div class="col-md-4 col-custom">
+            <!--Single Banner Area Start-->
+            <div class="single-banner hover-style mb-30">
+              <div class="banner-img">
+                <a href="#">
+                  <img src="assets/images/banner/im2.svg" alt="" />
+                  <div class="overlay-1"></div>
+                </a>
+              </div>
+            </div>
+            <!--Single Banner Area End-->
+          </div>
+          <div class="col-md-4 col-custom">
+            <!--Single Banner Area Start-->
+            <div class="single-banner hover-style mb-30">
+              <div class="banner-img">
+                <a href="#">
+                  <img src="assets/images/banner/im3.svg" alt="" />
+                  <div class="overlay-1"></div>
+                </a>
+              </div>
+            </div>
+            <!--Single Banner Area End-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Banner Area End Here -->
+    <!-- Testimonial Area Start Here -->
+    <div class="testimonial-area mt-text-2">
+      <div class="container custom-area">
+        <div class="row">
+          <!--Section Title Start-->
+          <div class="col-12 col-custom">
+            <div class="section-title text-center">
+              <span
+                lang="ar"
+                dir="rtl"
+                style="
+                  font-family: Lateef, cursive;
+                  font-size: 35px;
+                  font-weight: 500;
+                "
+                class="section-title-1"
+                >نحن نحب عملائنا
+              </span>
+              <h3
+                lang="ar"
+                dir="rtl"
+                style="
+                  font-family: Scheherazade New, serif;
+                  font-size: 55px;
+                  font-weight: 500;
+                "
+                class="section-title-3"
+              >
+                ماذا يقولون
+              </h3>
+            </div>
+          </div>
+          <!--Section Title End-->
+        </div>
+        <div class="row">
+          <div
+            class="testimonial-carousel swiper-container intro11-carousel-wrap col-12 col-custom"
+          >
+            <div class="swiper-wrapper">
+              <div class="single-item swiper-slide">
+                <!--Single Testimonial Start-->
+                <div class="single-testimonial text-center">
+                  <div class="testimonial-img">
+                    <img src="assets/images/testimonial/i1.svg" alt="" />
+                  </div>
+                  <div class="testimonial-content">
+                    <p lang="ar" dir="rtl">
+                      "أكثر ما أعجبني هو تنوع الأفكار في التغليف، أنتم تضيفون
+                      لمسة فخامة على كل هدية."
+                    </p>
+                    <div class="testimonial-author">
+                      <h6 lang="ar" dir="rtl">
+                        ليلى حسن <span lang="ar" dir="rtl">عميل</span>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+                <!--Single Testimonial End-->
+              </div>
+              <div class="single-item swiper-slide">
+                <!--Single Testimonial Start-->
+                <div class="single-testimonial text-center">
+                  <div class="testimonial-img">
+                    <img src="assets/images/testimonial/i2.svg" alt="" />
+                  </div>
+                  <div class="testimonial-content">
+                    <p lang="ar" dir="rtl">
+                      "خدمة ممتازة، الاهتمام بأدق التفاصيل جعل الهدية مميزة
+                      جدًا. شكراً لكم!"
+                    </p>
+                    <div class="testimonial-author">
+                      <h6 lang="ar" dir="rtl">
+                        سارة محمد <span lang="ar" dir="rtl">عميل</span>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+                <!--Single Testimonial End-->
+              </div>
+              <div class="single-item swiper-slide">
+                <!--Single Testimonial Start-->
+                <div class="single-testimonial text-center">
+                  <div class="testimonial-img">
+                    <img src="assets/images/testimonial/i3.svg" alt="" />
+                  </div>
+                  <div class="testimonial-content">
+                    <p lang="ar" dir="rtl">
+                      "تجربة رائعة! التغليف كان أنيق جدًا والتسليم أسرع مما
+                      توقعت. بالتأكيد سأكرر الطلب."
+                    </p>
+                    <div class="testimonial-author">
+                      <h6 lang="ar" dir="rtl">
+                        سارة محمد <span lang="ar" dir="rtl">عميل</span>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+                <!--Single Testimonial End-->
+              </div>
+            </div>
+            <!-- Slider Navigation -->
+            <div class="home1-slider-prev swiper-button-prev main-slider-nav">
+              <i class="lnr lnr-arrow-left"></i>
+            </div>
+            <div class="home1-slider-next swiper-button-next main-slider-nav">
+              <i class="lnr lnr-arrow-right"></i>
+            </div>
+            <!-- Slider pagination -->
+            <div class="swiper-pagination default-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonial Area End Here -->
+    <!-- Brand Logo Area Start Here -->
+    <div class="brand-logo-area gray-bg pt-no-text pb-no-text mt-text-5">
+      <div class="container custom-area">
+        <div class="row">
+          <div class="col-12 col-custom">
+            <div
+              class="brand-logo-carousel swiper-container intro11-carousel-wrap arrow-style-3"
+            >
+              <div class="swiper-wrapper">
+                <div class="single-brand swiper-slide">
+                  <a href="#">
+                    <img src="assets/images/brand/i1.svg" alt="Brand Logo" />
+                  </a>
+                </div>
+                <div class="single-brand swiper-slide">
+                  <a href="#">
+                    <img src="assets/images/brand/i2.svg" alt="Brand Logo" />
+                  </a>
+                </div>
+                <div class="single-brand swiper-slide">
+                  <a href="#">
+                    <img src="assets/images/brand/i3.svg" alt="Brand Logo" />
+                  </a>
+                </div>
+                <div class="single-brand swiper-slide">
+                  <a href="#">
+                    <img src="assets/images/brand/i4.svg" alt="Brand Logo" />
+                  </a>
+                </div>
+                <div class="single-brand swiper-slide">
+                  <a href="#">
+                    <img src="assets/images/brand/i5.svg" alt="Brand Logo" />
+                  </a>
+                </div>
+                <div class="single-brand swiper-slide">
+                  <a href="#">
+                    <img src="assets/images/brand/i6.svg" alt="Brand Logo" />
+                  </a>
+                </div>
+              </div>
+              <!-- Slider Navigation -->
+              <div class="home1-slider-prev swiper-button-prev main-slider-nav">
+                <i class="lnr lnr-arrow-left"></i>
+              </div>
+              <div class="home1-slider-next swiper-button-next main-slider-nav">
+                <i class="lnr lnr-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Brand Logo Area End Here -->
+    <!--Footer Area Start-->
+    <footer class="footer-area mt-5">
+      <div class="footer-widget-area">
+        <div class="container container-default custom-area">
+          <div class="row text-center text-md-start">
+            <!-- Logo + Social -->
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+              <div class="single-footer-widget m-0">
+                <div class="footer-logo mb-3">
+                  <a href="index.html">
+                    <img
+                      src="assets/images/logo/logo-Hadia bark.svg"
+                      alt="Logo Image"
+                      style="max-width: 150px"
+                    />
+                  </a>
+                </div>
+                <div class="social-links">
+                  <ul
+                    class="d-flex justify-content-center justify-content-md-start gap-2"
+                  >
+                    <li>
+                      <a class="rounded-circle" href="#"
+                        ><i class="fa fa-facebook-f"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a class="rounded-circle" href="#"
+                        ><i class="fa fa-twitter"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a class="rounded-circle" href="#"
+                        ><i class="fa fa-linkedin"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a class="rounded-circle" href="#"
+                        ><i class="fa fa-youtube"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a class="rounded-circle" href="#"
+                        ><i class="fa fa-vimeo"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Info -->
+            <div class="col-12 col-sm-6 col-md-6 col-lg-2 mb-4">
+              <div lang="ar" dir="rtl" class="single-footer-widget">
+                <h2 class="widget-title">معلومة</h2>
+                <ul class="widget-list">
+                  <li><a href="about-us.html">من نحن</a></li>
+                  <li><a href="about-us.html">اتصل بنا</a></li>
+                  <li><a href="frequently-questions.html">أسئلة شائعة</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-12 col-sm-6 col-md-6 col-lg-2 mb-4">
+              <div lang="ar" dir="rtl" class="single-footer-widget">
+                <h2 class="widget-title">رابط سريع</h2>
+                <ul class="widget-list">
+                  <li><a href="shop.html">المنتجات</a></li>
+                  <li><a href="cart.html">عربة التسوق</a></li>
+                  <li><a href="checkout.html">صفحة الدفع</a></li>
+                  <li><a href="my-account.html">حسابي</a></li>
+                  <li><a href="register.html">إنشاء حساب</a></li>
+                  <li><a href="login.html">تسجيل الدخول</a></li>
+                  <li><a href="about-us.html">من نحن</a></li>
+                  <li><a href="contact-us.html">اتصل بنا</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Policies -->
+            <div class="col-12 col-sm-6 col-md-6 col-lg-2 mb-4">
+              <div lang="ar" dir="rtl" class="single-footer-widget">
+                <h2 class="widget-title">سياساتنا</h2>
+                <ul class="widget-list">
+                  <li><a href="our-policy.html#sale-policy">سياسة البيع</a></li>
+                  <li>
+                    <a href="our-policy.html#shipping-policy">سياسة الشحن</a>
+                  </li>
+                  <li>
+                    <a href="our-policy.html#return-policy">سياسة العائدات</a>
+                  </li>
+                  <li>
+                    <a href="our-policy.html#privacy-policy">سياسة الخصوصية</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
+              <div lang="ar" dir="rtl" class="single-footer-widget">
+                <h2 class="widget-title">انظر المعلومات</h2>
+                <div class="widget-body">
+                  <address>
+                    📍 مكان متجرنا:
+                    <a
+                      href="https://www.google.com/maps?q=الليثي شارع الحجاز"
+                      target="_blank"
+                      >الليثي شارع الحجاز</a
+                    >
+                    <br />
+                    📞 هاتف: <a href="tel:+1123456789">+1 123 456 789</a> <br />
+                    💬 واتساب:
+                    <a href="https://wa.me/1123456789" target="_blank"
+                      >+1 123 456 789</a
+                    >
+                    <br />
+                    ✉️ بريد:
+                    <a href="mailto:ZC6tQ@example.com">ZC6tQ@example.com</a>
+                  </address>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-copyright-area py-3">
+        <div class="container custom-area">
+          <div class="row">
+            <div class="col-12 text-center">
+              <p style="color: #fff">
+                Copyright © <span id="year"></span>
+                <a href="index.html"><span>Hadia</span></a> | Developed by
+                <a
+                  href="https://ayman-al-darsi.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Ayman</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Footer Area End-->
+
+    <!-- Scroll to Top Start -->
+    <a class="scroll-to-top" href="#">
+      <i class="lnr lnr-arrow-up"></i>
+    </a>
+    <!-- Scroll to Top End -->
+
+    <script>
+      // لتحديث السنة تلقائيًا
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <!-- <script>
+      var swiper = new Swiper(".product-slider", {
+        slidesPerView: 3,
+        spaceBetween: 25,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          0: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+      });
+    </script> -->
+
+    <!-- كود التهيئة هنا -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var swiper = new Swiper(".product-slider", {
+          slidesPerView: 3,
+          spaceBetween: 25,
+          loop: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          breakpoints: {
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          },
+        });
+      });
+    </script>
+
+    <script>
+      const featuredContainer = document.getElementById("featured-products");
+      const featuredApiUrl =
+        "http://localhost:1337/api/products?populate=images&pagination[pageSize]=12&filters[featured_products][$eq]=true";
+
+      async function fetchFeaturedProducts() {
+        try {
+          const res = await fetch(featuredApiUrl);
+          const data = await res.json();
+          const products = data.data;
+
+          featuredContainer.innerHTML = "";
+
+          products.forEach((product) => {
+            const images =
+              product.images && Array.isArray(product.images)
+                ? product.images
+                : [];
+            const imgUrl =
+              images.length > 0
+                ? images[0].url
+                : "https://via.placeholder.com/300";
+
+            const card = document.createElement("div");
+            card.classList.add(
+              "col-lg-3",
+              "col-md-4",
+              "col-sm-6",
+              "mb-4",
+              "shop-card"
+            );
+
+            card.innerHTML = `
+            <div class="product-card border p-2 text-center h-100" style="width: 266px; max-width: 266px; height: 450px; max-height: 450px; display: flex; flex-direction: column; justify-content: space-between; align-items: center">
+              <div class="product-image mb-2">
+                <a href="product-details.html?docId=${product.documentId}">
+                  <img src="http://localhost:1337${imgUrl}" alt="${product.name}" class="img-fluid" style="max-width: 250px; max-height: 250px; border-radius: 12px; width: 250px; height: 250px; object-fit: cover; display: block;"/>
+                </a>
+              </div>
+              <div class="product-content" style="width: 266px; max-width: 266px; height: 150px; max-height: 150px;">
+                <h4 class="product-title mb-1">
+                  <a href="product-details.html?docId=${product.documentId}" style="font-size: 22px ;">${product.name}</a>
+                </h4>
+                <div class="price-box mb-2">
+                  <span class="regular-price" style="font-size: 20px">${product.price} د.ل</span>
+                </div>
+                <a href="#" class="btn btn-sm btn-primary product-cart" style="font-size: 18px;">إضافة للسلة</a>
+              </div>
+            </div>
+          `;
+            featuredContainer.appendChild(card);
+
+            // إضافة للسلة
+            card
+              .querySelector(".product-cart")
+              .addEventListener("click", (e) => {
+                e.preventDefault();
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+                const index = cart.findIndex(
+                  (item) => item.id === product.documentId
+                );
+                if (index > -1) {
+                  cart[index].qty += 1;
+                } else {
+                  cart.push({
+                    id: product.documentId,
+                    name: product.name,
+                    price: product.price,
+                    img: `http://localhost:1337${imgUrl}`,
+                    qty: 1,
+                  });
+                }
+                localStorage.setItem("cart", JSON.stringify(cart));
+                renderMiniCart();
+              });
+          });
+
+          // // إذا كنت تستخدم Swiper.js لتفعيل السلايدر
+          // if (typeof Swiper !== "undefined") {
+          //   new Swiper(".product-slider", {
+          //     slidesPerView: 4,
+          //     spaceBetween: 20,
+          //     navigation: {
+          //       nextEl: ".swiper-button-next",
+          //       prevEl: ".swiper-button-prev",
+          //     },
+          //     breakpoints: {
+          //       0: { slidesPerView: 1 },
+          //       576: { slidesPerView: 2 },
+          //       768: { slidesPerView: 3 },
+          //       992: { slidesPerView: 4 },
+          //     },
+          //   });
+          // }
+        } catch (err) {
+          console.error("خطأ في جلب المنتجات المميزة:", err);
+        }
+      }
+
+      fetchFeaturedProducts();
+    </script>
+
+    <script>
+      const bestSellingContainer = document.getElementById(
+        "best-selling-products"
+      );
+      const bestSellingApiUrl =
+        "http://localhost:1337/api/products?populate=images&pagination[pageSize]=8&filters[best_selling_products][$eq]=true";
+
+      async function fetchBestSellingProducts() {
+        try {
+          const res = await fetch(bestSellingApiUrl);
+          const data = await res.json();
+          const products = data.data;
+
+          bestSellingContainer.innerHTML = "";
+
+          products.forEach((product) => {
+            const images =
+              product.images && Array.isArray(product.images)
+                ? product.images
+                : [];
+            const imgUrl =
+              images.length > 0
+                ? images[0].url
+                : "https://via.placeholder.com/300";
+
+            const slide = document.createElement("div");
+            slide.classList.add(
+              "col-lg-3",
+              "col-md-4",
+              "col-sm-6",
+              "mb-4",
+              "shop-card"
+            );
+
+            slide.innerHTML = `
+            <div class="product-card border p-2 text-center h-100" style="width: 266px; max-width: 266px; height: 450px; max-height: 450px; display: flex; flex-direction: column; justify-content: space-between; align-items: center">
+              <div class="product-image mb-2">
+                <a href="product-details.html?docId=${product.documentId}">
+                  <img src="http://localhost:1337${imgUrl}" alt="${product.name}" class="img-fluid" style="max-width: 250px; max-height: 250px; border-radius: 12px; width: 250px; height: 250px; object-fit: cover; display: block;"/>
+                </a>
+              </div>
+              <div class="product-content" style="width: 266px; max-width: 266px; height: 150px; max-height: 150px;">
+                <h4 class="product-title mb-1">
+                  <a href="product-details.html?docId=${product.documentId}" style="font-size: 22px ;">${product.name}</a>
+                </h4>
+                <div class="price-box mb-2">
+                  <span class="regular-price" style="font-size: 20px">${product.price} د.ل</span>
+                </div>
+                <a href="#" class="btn btn-sm btn-primary product-cart" style="font-size: 18px;">إضافة للسلة</a>
+              </div>
+            </div>
+          `;
+            bestSellingContainer.appendChild(slide);
+            // إضافة للسلة
+            slide
+              .querySelector(".product-cart")
+              .addEventListener("click", (e) => {
+                e.preventDefault();
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+                const index = cart.findIndex(
+                  (item) => item.id === product.documentId
+                );
+                if (index > -1) {
+                  cart[index].qty += 1;
+                } else {
+                  cart.push({
+                    id: product.documentId,
+                    name: product.name,
+                    price: product.price,
+                    img: `http://localhost:1337${imgUrl}`,
+                    qty: 1,
+                  });
+                }
+                localStorage.setItem("cart", JSON.stringify(cart));
+                renderMiniCart();
+              });
+          });
+
+        } catch (err) {
+          console.error("خطأ في جلب أفضل المنتجات:", err);
+        }
+      }
+
+      fetchBestSellingProducts();
+    </script>
+    <!-- JS
+    ============================================ -->
+
+    <!-- jQuery JS -->
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <!-- jQuery Migrate JS -->
+    <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+    <!-- Modernizer JS -->
+    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper Slider JS -->
+    <script src="assets/js/plugins/swiper-bundle.min.js"></script>
+    <!-- nice select JS -->
+    <script src="assets/js/plugins/nice-select.min.js"></script>
+    <!-- Ajaxchimpt js -->
+    <script src="assets/js/plugins/jquery.ajaxchimp.min.js"></script>
+    <!-- Jquery Ui js -->
+    <script src="assets/js/plugins/jquery-ui.min.js"></script>
+    <!-- Jquery Countdown js -->
+    <script src="assets/js/plugins/jquery.countdown.min.js"></script>
+    <!-- jquery magnific popup js -->
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      function renderMiniCart() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const container = document.querySelector(".mini-cart-items");
+        const countEl = document.querySelector(".cart-item_count");
+        const totalEl = document.querySelector(".mini-cart-total");
+
+        if (!container) return;
+
+        container.innerHTML = "";
+        let total = 0;
+
+        cart.forEach((item) => {
+          total += item.price * item.qty;
+          const div = document.createElement("div");
+          div.classList.add("single-cart-item", "single_item");
+          div.innerHTML = `
+            <div class="cart-img">
+              <a href="cart.html"><img src="${item.img}" alt="${
+            item.name
+          }" /></a>
+            </div>
+            <div class="cart-text">
+              <h5 class="title"><a href="cart.html">${item.name}</a></h5>
+              <div class="cart-text-btn d-flex justify-content-between">
+                <div class="cart-qty">
+                  <span>${item.qty}×</span>
+                  <span class="cart-price">$${item.price.toFixed(2)}</span>
+                </div>
+                <button class="mini-remove" data-id="${
+                  item.id
+                }"><i class="ion-trash-b"></i></button>
+              </div>
+            </div>
+          `;
+          container.appendChild(div);
+        });
+
+        if (countEl)
+          countEl.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+        if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+      }
+
+      // حذف منتج من الهيدر
+      document.addEventListener("click", (e) => {
+        if (e.target.closest(".mini-remove")) {
+          const btn = e.target.closest(".mini-remove");
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const id = btn.dataset.id;
+          const index = cart.findIndex((item) => item.id === id);
+          if (index > -1) cart.splice(index, 1);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderMiniCart();
+        }
+      });
+
+      renderMiniCart();
+    </script>
+
+    <script>
+      const searchInput = document.getElementById("search");
+      const searchResultsContainer = document.querySelector(".search-results");
+
+      searchInput.addEventListener("keypress", async (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          const query = searchInput.value.trim();
+          if (!query) return;
+
+          const apiUrl = `http://localhost:1337/api/products?filters[name][$containsi]=${encodeURIComponent(
+            query
+          )}&populate=*`;
+
+          try {
+            const res = await fetch(apiUrl);
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            const data = await res.json();
+            const products = data.data;
+
+            // تنظيف النتائج السابقة
+            searchResultsContainer.innerHTML = "";
+
+            if (products.length === 0) {
+              searchResultsContainer.innerHTML = `<p style="padding:10px;">لا توجد منتجات مطابقة.</p>`;
+              return;
+            }
+
+            // عرض المنتجات
+            products.forEach((product) => {
+              const imageUrl = product.images?.[0]?.url
+                ? `http://localhost:1337${product.images[0].url}`
+                : "assets/images/cart/1.jpg"; // صورة افتراضية
+
+              const productHTML = `
+            <div class="single-cart-item" style="display:flex; margin-bottom:10px;">
+              <div class="cart-img" style="margin-left:10px;">
+                <a href="product-details.html?docId=${product.documentId}">
+                  <img src="${imageUrl}" alt="${product.name}" style="width:50px; height:50px; object-fit:cover; border-radius:5px;" />
+                </a>
+              </div>
+              <div class="cart-text">
+                <h5 class="title">
+                  <a href="product-details.html?docId=${product.documentId}">${product.name}</a>
+                </h5>
+                <div class="cart-text-btn">
+                  <div class="cart-qty">
+                    <span class="cart-price">${product.price} د.ل</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+              searchResultsContainer.innerHTML += productHTML;
+            });
+          } catch (err) {
+            console.error("خطأ في جلب البيانات:", err);
+            searchResultsContainer.innerHTML = `<p style="padding:10px;">حدث خطأ في الاتصال بالسيرفر.</p>`;
+          }
+        }
+      });
+    </script>
+  </body>
+
+  <!-- Mirrored from htmldemo.net/flosun/flosun/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2022 05:03:14 GMT -->
+</html>

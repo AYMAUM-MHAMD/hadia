@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <!-- Mirrored from htmldemo.net/flosun/flosun/my-account.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2022 05:03:27 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Hadia</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/Icon-Hadia.svg"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Tajawal:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lateef&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS
+	============================================ -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/font.awesome.min.css" />
+    <!-- Linear Icons CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/linearicons.min.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css" />
+    <!-- Jquery ui CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css" />
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/nice-select.min.css" />
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css" />
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <style>
+      /* عمود أسماء المنتجات (مع طي النص لعدة أسطر) */
+      #orders-table-body td:nth-child(2) {
+        display: -webkit-box; /* تفعيل flexbox خاص */
+        -webkit-line-clamp: inherit; /* عدد الأسطر المسموح بها (غيره إلى 3 مثلاً) */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal; /* السماح بطي النص لعدة أسطر */
+      }
+
+      /* جعل الجدول قابل للتمرير على الشاشات الصغيرة */
+      .myaccount-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* تصغير الخطوط والحواف على الشاشات الصغيرة */
+      @media (max-width: 576px) {
+        .myaccount-table table {
+          font-size: 12px;
+        }
+        .myaccount-table th,
+        .myaccount-table td {
+          padding: 4px 6px !important;
+          white-space: nowrap;
+        }
+        .myaccount-content h3 {
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .myaccount-table table {
+          font-size: 13px;
+        }
+        .myaccount-table th,
+        .myaccount-table td {
+          padding: 6px 8px !important;
+        }
+      }
+
+      .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        gap: 8px;
+      }
+
+      .pagination li {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .pagination li a {
+        display: block;
+        padding: 6px 12px;
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .pagination li.current a {
+        background: #ff6f61;
+        color: #fff;
+        border-color: #ff6f61;
+      }
+
+      .pagination li.disabled a {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .pagination li:hover a:not(.disabled) {
+        background: #f2f2f2;
+      }
+
+      .modal-product-gallery .main-image {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .modal-product-gallery .main-image img {
+        max-height: 350px;
+        object-fit: contain;
+      }
+
+      .thumbnail-images img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: border 0.3s;
+      }
+
+      .thumbnail-images img:hover,
+      .thumbnail-images img.active {
+        border-color: #ff6f61;
+      }
+
+      /* الصورة الرئيسية */
+      .modal-product-gallery .main-image img {
+        border-radius: 10px;
+        max-height: 400px;
+        object-fit: contain;
+      }
+
+      /* الصور المصغرة */
+      .modal-product-gallery .thumbnail-images {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+      }
+      .modal-product-gallery .thumbnail-images img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .modal-product-gallery .thumbnail-images img.active {
+        border-color: #ff4081;
+        transform: scale(1.05);
+      }
+      .shop-card {
+        display: contents;
+      }
+      .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        gap: 8px;
+      }
+
+      .pagination li {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .pagination li a {
+        display: block;
+        padding: 6px 12px;
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .pagination li.current a {
+        background: #ff6f61;
+        color: #fff;
+        border-color: #ff6f61;
+      }
+
+      .pagination li.disabled a {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .pagination li:hover a:not(.disabled) {
+        background: #f2f2f2;
+      }
+
+      .modal-product-gallery .main-image {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .modal-product-gallery .main-image img {
+        max-height: 350px;
+        object-fit: contain;
+      }
+
+      .thumbnail-images img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: border 0.3s;
+      }
+
+      .thumbnail-images img:hover,
+      .thumbnail-images img.active {
+        border-color: #ff6f61;
+      }
+
+      /* الصورة الرئيسية */
+      .modal-product-gallery .main-image img {
+        border-radius: 10px;
+        max-height: 400px;
+        object-fit: contain;
+      }
+
+      /* الصور المصغرة */
+      .modal-product-gallery .thumbnail-images {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+      }
+      .modal-product-gallery .thumbnail-images img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .modal-product-gallery .thumbnail-images img.active {
+        border-color: #ff4081;
+        transform: scale(1.05);
+      }
+      .shop-card {
+        display: contents;
+      }
+
+      .single_item {
+        gap: 15px;
+      }
+
+      .Cart-card {
+        max-height: 300px; /* الحد الأقصى للطول */
+        overflow-y: auto; /* إضافة شريط تمرير عمودي عند تجاوز المحتوى */
+        padding: 5px; /* مسافة داخلية بسيطة */
+      }
+      .search-results {
+        max-height: 300px; /* الحد الأقصى للطول */
+        overflow-y: auto; /* إضافة شريط تمرير عمودي عند تجاوز المحتوى */
+        padding: 5px; /* مسافة داخلية بسيطة */
+        border: 1px solid #ccc; /* إطار خفيف للفصل عن الصفحة */
+        border-radius: 5px; /* زوايا دائرية خفيفة */
+        background-color: #fff; /* خلفية بيضاء */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+        z-index: 999;
+      }
+
+      /* تحسين الفوتر على الشاشات الصغيرة */
+      @media (max-width: 576px) {
+        footer .single-footer-widget {
+          text-align: center !important;
+        }
+
+        footer .single-footer-widget h2.widget-title {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+
+        footer .widget-list li {
+          margin-bottom: 6px;
+        }
+
+        footer .widget-list a {
+          font-size: 15px;
+        }
+
+        footer address {
+          font-size: 14px;
+          line-height: 1.8;
+        }
+
+        footer .social-links ul {
+          justify-content: center !important;
+          gap: 8px;
+        }
+
+        footer .social-links a {
+          width: 32px;
+          height: 32px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #ddd;
+        }
+      }
+
+      /* تحسين ظهور السهم للقائمة الفرعية */
+      .mobile-menu .menu-item-has-children > a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* ضبط القوائم الفرعية */
+      .mobile-menu .dropdown {
+        padding-right: 15px;
+        border-right: 2px solid #eee;
+      }
+
+      .pagination .page-link.disabled {
+        pointer-events: none;
+        opacity: 0.4;
+      }
+
+      .pagination .page-link.active {
+        background: #007bff;
+        color: white !important;
+        border-radius: 4px;
+      }
+
+      /* 📌 تصغير الجدول في المقاسات المتوسطة */
+      @media (max-width: 1200px) {
+        .myaccount-table table {
+          font-size: 14px;
+        }
+        .myaccount-table th,
+        .myaccount-table td {
+          padding: 6px 8px;
+        }
+      }
+
+      /* 📱 تحويل الجدول إلى بطاقات في الموبايل */
+      @media (max-width: 1050px) {
+        .myaccount-table table,
+        .myaccount-table thead,
+        .myaccount-table tbody,
+        .myaccount-table th,
+        .myaccount-table td,
+        .myaccount-table tr {
+          display: block;
+          width: 100%;
+        }
+
+        .myaccount-table thead {
+          display: none; /* إخفاء العناوين في الموبايل */
+        }
+
+        .myaccount-table tr {
+          border: 1px solid #ddd;
+          margin-bottom: 10px;
+          border-radius: 8px;
+          padding: 8px;
+          background: #fff;
+        }
+
+        .myaccount-table td {
+          display: flex;
+          justify-content: space-between;
+          padding: 6px 4px;
+          font-size: 14px;
+        }
+
+        .myaccount-table td::before {
+          content: attr(data-title);
+          font-weight: bold;
+          color: #555;
+          margin-left: 5px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      const jwt = localStorage.getItem("jwt");
+      if (!jwt) {
+        // لو ما فيه تسجيل دخول → رجعه للـ login
+        window.location.href = "login.html";
+      }
+    </script>
+
+    <!-- Header Area Start Here -->
+    <header class="main-header-area">
+      <!-- Main Header Area Start -->
+      <div class="main-header header-transparent header-sticky">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-lg-2 col-xl-2 col-md-6 col-6 col-custom">
+              <div class="header-logo d-flex align-items-center">
+                <a href="index.html">
+                  <!-- src="assets/images/logo/logo.png" -->
+                  <img
+                    class="img-full"
+                    src="assets/images/logo/logo-Hadia.svg"
+                    alt="Header Logo"
+                  />
+                </a>
+              </div>
+            </div>
+            <div
+              class="col-lg-8 d-none d-lg-flex justify-content-center col-custom"
+            >
+              <nav class="main-nav d-none d-lg-flex">
+                <ul class="nav">
+                  <li>
+                    <a href="index.html">
+                      <span class="menu-text">الصفحة الرئيسية</span>
+                      <!-- <i class="fa fa-angle-down"></i> -->
+                    </a>
+                    <!-- <ul class="dropdown-submenu dropdown-hover">
+                      <li>
+                        <a class="active" href="index.html">Home Page - 1</a>
+                      </li>
+                    </ul> -->
+                  </li>
+                  <li>
+                    <a href="shop-fullwidth.html">
+                      <span class="menu-text">المنتجات</span>
+                      <!-- <i class="fa fa-angle-down"></i> -->
+                    </a>
+                    <!-- <div class="mega-menu dropdown-hover">
+                      <div class="menu-colum">
+                        <ul>
+                          <li><span class="mega-menu-text">Shop</span></li>
+                          <li>
+                            <a href="shop-fullwidth.html">Shop Full Width</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu-colum">
+                        <ul>
+                          <li><span class="mega-menu-text">Product</span></li>
+                          <li>
+                            <a href="product-details.html">Single Product</a>
+                          </li>
+                          <li>
+                            <a href="variable-product-details.html"
+                              >Variable Product</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu-colum">
+                        <ul>
+                          <li><span class="mega-menu-text">Others</span></li>
+                          <li><a href="error-404.html">Error 404</a></li>
+                          <li><a href="cart.html">Cart Page</a></li>
+                          <li><a href="checkout.html">Checkout Page</a></li>
+                        </ul>
+                      </div>
+                    </div> -->
+                  </li>
+                  <!-- <li>
+                    <a href="blog-grid-fullwidth.html">
+                      <span class="menu-text"> Blog</span>
+                      <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-submenu dropdown-hover">
+                      <li>
+                        <a href="blog-grid-fullwidth.html"
+                          >Blog Grid Fullwidth</a
+                        >
+                      </li>
+                      <li>
+                        <a href="blog-details-fullwidth.html"
+                          >Blog Details Fullwidth</a
+                        >
+                      </li>
+                    </ul>
+                  </li> -->
+                  <li>
+                    <a href="about-us.html">
+                      <span class="menu-text">من نحن</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="contact-us.html">
+                      <span class="menu-text">اتصل بنا</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="menu-text">صفحات</span>
+                      <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul
+                      class="dropdown-submenu dropdown-hover"
+                      lang="ar"
+                      dir="rtl"
+                    >
+                      <li>
+                        <a class="active" href="my-account.html">حسابي</a>
+                      </li>
+                      <li>
+                        <a href="frequently-questions.html">أسئلة شائعة</a>
+                      </li>
+                      <li><a href="login.html">تسجيل الدخول</a></li>
+                      <li><a href="register.html">إنشاء حساب</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-lg-2 col-md-6 col-6 col-custom">
+              <div
+                class="header-right-area main-nav"
+                dir="rtl"
+                style="display: flex; justify-content: flex-start"
+              >
+                <ul class="nav" style="gap: 15px">
+                  <!-- السلة -->
+                  <li class="sidemenu-wrap">
+                    <a
+                      href="cart.html"
+                      class="minicart-btn toolbar-btn"
+                      style="position: relative"
+                    >
+                      <i
+                        class="fa fa-shopping-cart"
+                        style="
+                          position: absolute;
+                          z-index: 10;
+                          left: 3px;
+                          top: 0;
+                        "
+                      ></i>
+                      <span
+                        class="cart-item_count"
+                        style="
+                          z-index: 5;
+                          position: absolute;
+                          top: -13px;
+                          left: 15px;
+                          background: #e72463;
+                          color: #fff;
+                          border-radius: 700px;
+                          padding-right: 6px;
+                          padding-left: 6px;
+                          font-size: 12px;
+                        "
+                        >0</span
+                      >
+                    </a>
+                    <ul
+                      class="dropdown-sidemenu dropdown-hover-2 dropdown-cart"
+                      dir="rtl"
+                      style="
+                        @media (max-width: 480px) {
+                          display: flex;
+                          justify-content: space-around;
+                        }
+                      "
+                    >
+                      <li>
+                        <div class="cart-item-wrapper">
+                          <!-- العناصر داخل السلة -->
+                          <div class="mini-cart-items Cart-card"></div>
+
+                          <!-- الإجمالي -->
+                          <div
+                            class="cart-price-total d-flex justify-content-between"
+                          >
+                            <h5>الإجمالي :</h5>
+                            <h5 class="mini-cart-total">0 د.ل</h5>
+                          </div>
+
+                          <!-- روابط السلة -->
+                          <div
+                            class="cart-links d-flex justify-content-between"
+                          >
+                            <a
+                              class="btn product-cart button-icon flosun-button dark-btn"
+                              href="cart.html"
+                              style="padding: 0 25px"
+                            >
+                              عرض السلة
+                            </a>
+                            <a
+                              class="btn flosun-button secondary-btn rounded-0"
+                              href="checkout.html"
+                            >
+                              إتمام الشراء
+                            </a>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <!-- البحث -->
+                  <li class="sidemenu-wrap" style="margin: 0">
+                    <a href="#"><i class="fa fa-search"></i> </a>
+                    <ul
+                      class="dropdown-sidemenu dropdown-hover-2 dropdown-search"
+                    >
+                      <li>
+                        <form action="#">
+                          <input
+                            name="search"
+                            id="search"
+                            placeholder="ابحث هنا ..."
+                            type="text"
+                          />
+                          <button type="submit">
+                            <i class="fa fa-search"></i>
+                          </button>
+                        </form>
+                        <div
+                          class="cart-item-wrapper dropdown-sidemenu dropdown-hover-2 search-results"
+                        >
+                          <!-- <div class="single-cart-item">
+                            <div class="cart-img" style="margin-left: 15px">
+                              <a href="cart.html"
+                                ><img
+                                  src="assets/images/cart/1.jpg"
+                                  alt="صورة المنتج"
+                              /></a>
+                            </div>
+                            <div class="cart-text">
+                              <h5 class="title">
+                                <a href="cart.html">زهرة بيضاء صغيرة</a>
+                              </h5>
+                              <div class="cart-text-btn">
+                                <div class="cart-qty">
+                                  <span class="cart-price">$98.00</span>
+                                </div>
+                                <button type="button">
+                                  <i class="ion-trash-b"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div> -->
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <!-- زر الموبايل -->
+                  <li class="mobile-menu-btn d-lg-none">
+                    <a class="off-canvas-btn" href="#">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main Header Area End -->
+      <!-- off-canvas menu start -->
+      <aside class="off-canvas-wrapper" id="mobileMenu">
+        <div class="off-canvas-overlay"></div>
+        <div class="off-canvas-inner-content">
+          <div class="btn-close-off-canvas">
+            <i class="fa fa-times"></i>
+          </div>
+          <div class="off-canvas-inner">
+            <!-- mobile menu start -->
+            <div class="mobile-navigation">
+              <!-- mobile menu navigation start -->
+              <nav>
+                <ul class="mobile-menu" lang="ar" dir="rtl">
+                  <li><a href="index.html">الصفحة الرئيسية</a></li>
+                  <li><a href="shop-fullwidth.html">المنتجات</a></li>
+                  <li><a href="about-us.html">من نحن</a></li>
+                  <li><a href="contact-us.html">اتصل بنا</a></li>
+
+                  <li class="menu-item-has-children">
+                    <a href="#" style="margin-right: 10px"
+                      >صفحات <i class="fa fa-angle-down"></i
+                    ></a>
+                    <ul class="dropdown">
+                      <li><a href="my-account.html">حسابي</a></li>
+                      <li>
+                        <a href="frequently-questions.html">أسئلة شائعة</a>
+                      </li>
+                      <li><a href="login.html">تسجيل الدخول</a></li>
+                      <li><a href="register.html">إنشاء حساب</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+              <!-- mobile menu navigation end -->
+            </div>
+            <!-- mobile menu end -->
+          </div>
+        </div>
+      </aside>
+      <!-- off-canvas menu end -->
+    </header>
+    <!-- Header Area End Here -->
+    <!-- Breadcrumb Area Start Here -->
+    <div class="breadcrumbs-area position-relative">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <div class="breadcrumb-content position-relative section-content">
+              <h3 class="title-3">صفحة حسابي</h3>
+              <ul>
+                <li><a href="index.html">الصفحة الرئيسية</a></li>
+                <li>صفحة حسابي</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Breadcrumb Area End Here -->
+    <!-- ملف: my-account-ar-rtl.html -->
+    <div class="my-account-wrapper mt-no-text" dir="rtl">
+      <div class="container container-default-2 custom-area">
+        <div class="row">
+          <div class="col-lg-12 col-custom">
+            <div class="myaccount-page-wrapper">
+              <!-- قائمة التبويبات -->
+              <div
+                class="row"
+                style="
+                  gap: 25px;
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: column;
+                  align-content: center;
+                "
+              >
+                <div class="col-lg-3 col-md-4 col-custom">
+                  <div
+                    class="myaccount-tab-menu nav flex-column text-right"
+                    role="tablist"
+                  >
+                    <a href="#dashboad" class="active" data-bs-toggle="tab">
+                      <i class="fa fa-dashboard"></i> لوحة التحكم
+                    </a>
+                    <a href="#orders" data-bs-toggle="tab">
+                      <i class="fa fa-cart-arrow-down"></i> الطلبات
+                    </a>
+                    <a href="login.html" id="logout-btn">
+                      <i class="fa fa-sign-out"></i> تسجيل الخروج
+                    </a>
+                  </div>
+                </div>
+
+                <!-- محتوى التبويبات -->
+                <div class="col-lg-9 col-md-8 col-custom">
+                  <div class="tab-content" id="myaccountContent">
+                    <!-- لوحة التحكم -->
+                    <div
+                      class="tab-pane fade show active"
+                      id="dashboad"
+                      role="tabpanel"
+                    >
+                      <div class="myaccount-content text-right">
+                        <h3>لوحة التحكم</h3>
+                        <p class="mb-0">
+                          من لوحة التحكم الخاصة بك، يمكنك متابعة طلباتك الأخيرة.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- الطلبات -->
+                    <div class="tab-pane fade" id="orders" role="tabpanel">
+                      <div class="myaccount-content text-right">
+                        <h3>الطلبات</h3>
+                        <div
+                          class="myaccount-table table-responsive text-center"
+                        >
+                          <table class="table table-bordered text-right">
+                            <thead class="thead-light">
+                              <tr>
+                                <th>رقم الطلب</th>
+                                <th>اسماء المنتجات</th>
+                                <th>الحالة</th>
+                                <th>الإجمالي</th>
+                                <th>التاريخ</th>
+                              </tr>
+                            </thead>
+                            <tbody id="orders-table-body">
+                              <!-- سيتم ملؤها بالـ API -->
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer Area Start-->
+    <footer class="footer-area mt-5">
+      <div class="footer-widget-area">
+        <div class="container container-default custom-area">
+          <div class="row text-center text-md-start">
+            <!-- Logo + Social -->
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+              <div class="single-footer-widget m-0">
+                <div class="footer-logo mb-3">
+                  <a href="index.html">
+                    <img
+                      src="assets/images/logo/logo-Hadia bark.svg"
+                      alt="Logo Image"
+                      style="max-width: 150px"
+                    />
+                  </a>
+                </div>
+                <div class="social-links">
+                  <ul
+                    class="d-flex justify-content-center justify-content-md-start gap-2"
+                  >
+                    <li>
+                      <a class="rounded-circle" href="#"
+                        ><i class="fa fa-facebook-f"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a class="rounded-circle" href="#"
+                        ><i class="fa fa-twitter"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a class="rounded-circle" href="#"
+                        ><i class="fa fa-linkedin"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a class="rounded-circle" href="#"
+                        ><i class="fa fa-youtube"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a class="rounded-circle" href="#"
+                        ><i class="fa fa-vimeo"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Info -->
+            <div class="col-12 col-sm-6 col-md-6 col-lg-2 mb-4">
+              <div lang="ar" dir="rtl" class="single-footer-widget">
+                <h2 class="widget-title">معلومة</h2>
+                <ul class="widget-list">
+                  <li><a href="about-us.html">من نحن</a></li>
+                  <li><a href="about-us.html">اتصل بنا</a></li>
+                  <li><a href="frequently-questions.html">أسئلة شائعة</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-12 col-sm-6 col-md-6 col-lg-2 mb-4">
+              <div lang="ar" dir="rtl" class="single-footer-widget">
+                <h2 class="widget-title">رابط سريع</h2>
+                <ul class="widget-list">
+                  <li><a href="shop.html">المنتجات</a></li>
+                  <li><a href="cart.html">عربة التسوق</a></li>
+                  <li><a href="checkout.html">صفحة الدفع</a></li>
+                  <li><a href="my-account.html">حسابي</a></li>
+                  <li><a href="register.html">إنشاء حساب</a></li>
+                  <li><a href="login.html">تسجيل الدخول</a></li>
+                  <li><a href="about-us.html">من نحن</a></li>
+                  <li><a href="contact-us.html">اتصل بنا</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Policies -->
+            <div class="col-12 col-sm-6 col-md-6 col-lg-2 mb-4">
+              <div lang="ar" dir="rtl" class="single-footer-widget">
+                <h2 class="widget-title">سياساتنا</h2>
+                <ul class="widget-list">
+                  <li><a href="our-policy.html#sale-policy">سياسة البيع</a></li>
+                  <li>
+                    <a href="our-policy.html#shipping-policy">سياسة الشحن</a>
+                  </li>
+                  <li>
+                    <a href="our-policy.html#return-policy">سياسة العائدات</a>
+                  </li>
+                  <li>
+                    <a href="our-policy.html#privacy-policy">سياسة الخصوصية</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
+              <div lang="ar" dir="rtl" class="single-footer-widget">
+                <h2 class="widget-title">انظر المعلومات</h2>
+                <div class="widget-body">
+                  <address>
+                    📍 مكان متجرنا:
+                    <a
+                      href="https://www.google.com/maps?q=الليثي شارع الحجاز"
+                      target="_blank"
+                      >الليثي شارع الحجاز</a
+                    >
+                    <br />
+                    📞 هاتف: <a href="tel:+1123456789">+1 123 456 789</a> <br />
+                    💬 واتساب:
+                    <a href="https://wa.me/1123456789" target="_blank"
+                      >+1 123 456 789</a
+                    >
+                    <br />
+                    ✉️ بريد:
+                    <a href="mailto:ZC6tQ@example.com">ZC6tQ@example.com</a>
+                  </address>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-copyright-area py-3">
+        <div class="container custom-area">
+          <div class="row">
+            <div class="col-12 text-center">
+              <p style="color: #fff">
+                Copyright © <span id="year"></span>
+                <a href="index.html"><span>Hadia</span></a> | Developed by
+                <a
+                  href="https://ayman-al-darsi.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Ayman</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Footer Area End-->
+
+    <!-- 
+    document.addEventListener("DOMContentLoaded", () => { const token =
+    localStorage.getItem("jwt"); // أو من الكوكي const headers = {
+    Authorization: `Bearer ${token}` }; // 1. جلب الطلبات
+    fetch("http://localhost:1337/api/orders", { headers }) .then(res =>
+    res.json()) .then(data => { const tbody =
+    document.getElementById("orders-table-body"); tbody.innerHTML =
+    data.data.map(order => `
+    <tr>
+      <td>${order.id}</td>
+      <td>${new Date(order.attributes.createdAt).toLocaleDateString()}</td>
+      <td>${order.attributes.status}</td>
+      <td>$${order.attributes.total}</td>
+      <td>
+        <a
+          href="/orders/${order.id}"
+          class="btn flosun-button secondary-btn theme-color rounded-0"
+          >عرض</a
+        >
+      </td>
+    </tr>
+    `).join(""); }); // 2. جلب بيانات العنوان والحساب
+    fetch("http://localhost:1337/api/profiles/me", { headers }) .then(res =>
+    res.json()) .then(user => { const profile = user.data.attributes;
+    document.getElementById("billing-address").innerHTML = `
+    <p><strong>${profile.firstName} ${profile.lastName}</strong></p>
+    <p>${profile.address}</p>
+    <p>الهاتف: ${profile.phone}</p>
+    `; document.getElementById("first-name").value = profile.firstName;
+    document.getElementById("last-name").value = profile.lastName;
+    document.getElementById("display-name").value = profile.displayName;
+    document.getElementById("email").value = profile.email; }); // 3. تحديث
+    بيانات الحساب
+    document.getElementById("account-form").addEventListener("submit", e => {
+    e.preventDefault(); const body = { firstName:
+    document.getElementById("first-name").value, lastName:
+    document.getElementById("last-name").value, displayName:
+    document.getElementById("display-name").value, email:
+    document.getElementById("email").value, password:
+    document.getElementById("new-pwd").value || undefined };
+    fetch("http://localhost:1337/api/profiles/me", { method: "PUT", headers: {
+    ...headers, "Content-Type": "application/json" }, body: JSON.stringify(body)
+    }).then(res => res.json()) .then(res => alert("تم تحديث الحساب بنجاح!"))
+    .catch(err => console.error(err)); }); }); -->
+
+    <script>
+      document
+        .getElementById("logout-btn")
+        ?.addEventListener("click", function (e) {
+          e.preventDefault();
+          // ✅ مسح التوكن وبيانات المستخدم
+          localStorage.removeItem("jwt");
+          localStorage.removeItem("user");
+
+          // ✅ إعادة توجيه لصفحة تسجيل الدخول
+          window.location.href = "login.html";
+        });
+    </script>
+
+    <script>
+      // العنصر الذي يحتوي الجدول
+      const ordersTableBody = document.getElementById("orders-table-body");
+
+      async function fetchUserOrders() {
+        try {
+          const res = await fetch(
+            "http://localhost:1337/api/orders?populate=products",
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("jwt")}`, // افترض أن JWT مخزن
+              },
+            }
+          );
+
+          if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+          const result = await res.json();
+          const orders = result.data;
+
+          // مسح الجدول القديم
+          ordersTableBody.innerHTML = "";
+
+          orders.forEach((order) => {
+            // المنتجات كأسماء مفصولة بفواصل
+            const productNames = order.products.map((p) => p.name).join(", ");
+
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+            <td data-title="رقم الطلب">${order.order_number}</td>
+            <td data-title="اسماء المنتجات:">${productNames}</td>
+            <td data-title="الحالة">${order.statuS}</td>
+            <td data-title="الإجمالي">${order.total_price} د.ل</td>
+            <td data-title="التاريخ">${new Date(
+              order.createdAt
+            ).toLocaleDateString()}</td>
+            `;
+            // <td data-title="عرض"><a href="/orders/${order.id}">عرض</a></td>
+
+            ordersTableBody.appendChild(tr);
+          });
+        } catch (error) {
+          console.error("خطأ في جلب الطلبات:", error);
+          ordersTableBody.innerHTML = `<tr><td colspan="6">تعذر تحميل الطلبات</td></tr>`;
+        }
+      }
+
+      // نفذ عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", fetchUserOrders);
+    </script>
+
+    <!-- JS
+============================================ -->
+
+    <!-- jQuery JS -->
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <!-- jQuery Migrate JS -->
+    <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+    <!-- Modernizer JS -->
+    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper Slider JS -->
+    <script src="assets/js/plugins/swiper-bundle.min.js"></script>
+    <!-- nice select JS -->
+    <script src="assets/js/plugins/nice-select.min.js"></script>
+    <!-- Ajaxchimpt js -->
+    <script src="assets/js/plugins/jquery.ajaxchimp.min.js"></script>
+    <!-- Jquery Ui js -->
+    <script src="assets/js/plugins/jquery-ui.min.js"></script>
+    <!-- Jquery Countdown js -->
+    <script src="assets/js/plugins/jquery.countdown.min.js"></script>
+    <!-- jquery magnific popup js -->
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      function renderMiniCart() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const container = document.querySelector(".mini-cart-items");
+        const countEl = document.querySelector(".cart-item_count");
+        const totalEl = document.querySelector(".mini-cart-total");
+
+        if (!container) return;
+
+        container.innerHTML = "";
+        let total = 0;
+
+        cart.forEach((item) => {
+          total += item.price * item.qty;
+          const div = document.createElement("div");
+          div.classList.add("single-cart-item", "single_item");
+          div.innerHTML = `
+            <div class="cart-img">
+              <a href="cart.html"><img src="${item.img}" alt="${
+            item.name
+          }" /></a>
+            </div>
+            <div class="cart-text">
+              <h5 class="title"><a href="cart.html">${item.name}</a></h5>
+              <div class="cart-text-btn d-flex justify-content-between">
+                <div class="cart-qty">
+                  <span>${item.qty}×</span>
+                  <span class="cart-price">$${item.price.toFixed(2)}</span>
+                </div>
+                <button class="mini-remove" data-id="${
+                  item.id
+                }"><i class="ion-trash-b"></i></button>
+              </div>
+            </div>
+          `;
+          container.appendChild(div);
+        });
+
+        if (countEl)
+          countEl.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+        if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+      }
+
+      // حذف منتج من الهيدر
+      document.addEventListener("click", (e) => {
+        if (e.target.closest(".mini-remove")) {
+          const btn = e.target.closest(".mini-remove");
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const id = btn.dataset.id;
+          const index = cart.findIndex((item) => item.id === id);
+          if (index > -1) cart.splice(index, 1);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderMiniCart();
+        }
+      });
+
+      renderMiniCart();
+    </script>
+
+    <script>
+      const searchInput = document.getElementById("search");
+      const searchResultsContainer = document.querySelector(".search-results");
+
+      searchInput.addEventListener("keypress", async (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          const query = searchInput.value.trim();
+          if (!query) return;
+
+          const apiUrl = `http://localhost:1337/api/products?filters[name][$containsi]=${encodeURIComponent(
+            query
+          )}&populate=*`;
+
+          try {
+            const res = await fetch(apiUrl);
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            const data = await res.json();
+            const products = data.data;
+
+            // تنظيف النتائج السابقة
+            searchResultsContainer.innerHTML = "";
+
+            if (products.length === 0) {
+              searchResultsContainer.innerHTML = `<p style="padding:10px;">لا توجد منتجات مطابقة.</p>`;
+              return;
+            }
+
+            // عرض المنتجات
+            products.forEach((product) => {
+              const imageUrl = product.images?.[0]?.url
+                ? `http://localhost:1337${product.images[0].url}`
+                : "assets/images/cart/1.jpg"; // صورة افتراضية
+
+              const productHTML = `
+            <div class="single-cart-item" style="display:flex; margin-bottom:10px;">
+              <div class="cart-img" style="margin-left:10px;">
+                <a href="product-details.html?docId=${product.documentId}">
+                  <img src="${imageUrl}" alt="${product.name}" style="width:50px; height:50px; object-fit:cover; border-radius:5px;" />
+                </a>
+              </div>
+              <div class="cart-text">
+                <h5 class="title">
+                  <a href="product-details.html?docId=${product.documentId}">${product.name}</a>
+                </h5>
+                <div class="cart-text-btn">
+                  <div class="cart-qty">
+                    <span class="cart-price">${product.price} د.ل</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+              searchResultsContainer.innerHTML += productHTML;
+            });
+          } catch (err) {
+            console.error("خطأ في جلب البيانات:", err);
+            searchResultsContainer.innerHTML = `<p style="padding:10px;">حدث خطأ في الاتصال بالسيرفر.</p>`;
+          }
+        }
+      });
+    </script>
+  </body>
+
+  <!-- Mirrored from htmldemo.net/flosun/flosun/my-account.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Dec 2022 05:03:27 GMT -->
+</html>
