@@ -1215,7 +1215,7 @@
           const query = searchInput.value.trim();
           if (!query) return;
 
-          const apiUrl = `http://localhost:1337/api/products?filters[name][$containsi]=${encodeURIComponent(
+          const apiUrl = `https://legendary-fun-5dfdd25abf.strapiapp.com/api/products?filters[name][$containsi]=${encodeURIComponent(
             query
           )}&populate=*`;
 
@@ -1236,7 +1236,7 @@
             // عرض المنتجات
             products.forEach((product) => {
               const imageUrl = product.images?.[0]?.url
-                ? `http://localhost:1337${product.images[0].url}`
+                ? `https://legendary-fun-5dfdd25abf.strapiapp.com${product.images[0].url}`
                 : "assets/images/cart/1.jpg"; // صورة افتراضية
 
               const productHTML = `

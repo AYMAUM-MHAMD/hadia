@@ -994,7 +994,7 @@
     document.addEventListener("DOMContentLoaded", () => { const token =
     localStorage.getItem("jwt"); // أو من الكوكي const headers = {
     Authorization: `Bearer ${token}` }; // 1. جلب الطلبات
-    fetch("http://localhost:1337/api/orders", { headers }) .then(res =>
+    fetch("https://legendary-fun-5dfdd25abf.strapiapp.com/api/orders", { headers }) .then(res =>
     res.json()) .then(data => { const tbody =
     document.getElementById("orders-table-body"); tbody.innerHTML =
     data.data.map(order => `
@@ -1012,7 +1012,7 @@
       </td>
     </tr>
     `).join(""); }); // 2. جلب بيانات العنوان والحساب
-    fetch("http://localhost:1337/api/profiles/me", { headers }) .then(res =>
+    fetch("https://legendary-fun-5dfdd25abf.strapiapp.com/api/profiles/me", { headers }) .then(res =>
     res.json()) .then(user => { const profile = user.data.attributes;
     document.getElementById("billing-address").innerHTML = `
     <p><strong>${profile.firstName} ${profile.lastName}</strong></p>
@@ -1030,7 +1030,7 @@
     document.getElementById("display-name").value, email:
     document.getElementById("email").value, password:
     document.getElementById("new-pwd").value || undefined };
-    fetch("http://localhost:1337/api/profiles/me", { method: "PUT", headers: {
+    fetch("https://legendary-fun-5dfdd25abf.strapiapp.com/api/profiles/me", { method: "PUT", headers: {
     ...headers, "Content-Type": "application/json" }, body: JSON.stringify(body)
     }).then(res => res.json()) .then(res => alert("تم تحديث الحساب بنجاح!"))
     .catch(err => console.error(err)); }); }); -->
@@ -1056,7 +1056,7 @@
       async function fetchUserOrders() {
         try {
           const res = await fetch(
-            "http://localhost:1337/api/orders?populate=products",
+            "https://legendary-fun-5dfdd25abf.strapiapp.com/api/orders?populate=products",
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("jwt")}`, // افترض أن JWT مخزن
@@ -1196,7 +1196,7 @@
           const query = searchInput.value.trim();
           if (!query) return;
 
-          const apiUrl = `http://localhost:1337/api/products?filters[name][$containsi]=${encodeURIComponent(
+          const apiUrl = `https://legendary-fun-5dfdd25abf.strapiapp.com/api/products?filters[name][$containsi]=${encodeURIComponent(
             query
           )}&populate=*`;
 
@@ -1217,7 +1217,7 @@
             // عرض المنتجات
             products.forEach((product) => {
               const imageUrl = product.images?.[0]?.url
-                ? `http://localhost:1337${product.images[0].url}`
+                ? `https://legendary-fun-5dfdd25abf.strapiapp.com${product.images[0].url}`
                 : "assets/images/cart/1.jpg"; // صورة افتراضية
 
               const productHTML = `

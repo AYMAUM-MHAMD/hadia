@@ -764,7 +764,8 @@
     </div> -->
 
     <script>
-      const apiUrl = "http://localhost:1337/api/products?populate=images";
+      const apiUrl =
+        "https://legendary-fun-5dfdd25abf.strapiapp.com/api/products?populate=images";
       const shopWrapper = document.querySelector(".shop_wrapper");
       const paginationEl = document.querySelector(".pagination");
 
@@ -810,7 +811,7 @@
             <div class="product-card border p-2 text-center h-100" style="width: 266px; max-width: 266px; height: 450px; max-height: 450px; display: flex; flex-direction: column; justify-content: space-between; align-items: center">
               <div class="product-image mb-2">
                 <a href="product-details.html?docId=${product.documentId}">
-                  <img src="http://localhost:1337${imgUrl}" alt="${product.name}" class="img-fluid" style="max-width: 250px; max-height: 250px; border-radius: 12px; width: 250px; height: 250px; object-fit: cover; display: block;"/>
+                  <img src="https://legendary-fun-5dfdd25abf.strapiapp.com${imgUrl}" alt="${product.name}" class="img-fluid" style="max-width: 250px; max-height: 250px; border-radius: 12px; width: 250px; height: 250px; object-fit: cover; display: block;"/>
                 </a>
               </div>
               <div class="product-content" style="width: 266px; max-width: 266px; height: 150px; max-height: 150px;">
@@ -840,7 +841,7 @@
                 id: product.documentId,
                 name: product.name,
                 price: product.price,
-                img: `http://localhost:1337${imgUrl}`,
+                img: `https://legendary-fun-5dfdd25abf.strapiapp.com${imgUrl}`,
                 qty: 1,
               });
             }
@@ -1012,7 +1013,7 @@
           const query = searchInput.value.trim();
           if (!query) return;
 
-          const apiUrl = `http://localhost:1337/api/products?filters[name][$containsi]=${encodeURIComponent(
+          const apiUrl = `https://legendary-fun-5dfdd25abf.strapiapp.com/api/products?filters[name][$containsi]=${encodeURIComponent(
             query
           )}&populate=*`;
 
@@ -1033,7 +1034,7 @@
             // عرض المنتجات
             products.forEach((product) => {
               const imageUrl = product.images?.[0]?.url
-                ? `http://localhost:1337${product.images[0].url}`
+                ? `https://legendary-fun-5dfdd25abf.strapiapp.com${product.images[0].url}`
                 : "assets/images/cart/1.jpg"; // صورة افتراضية
 
               const productHTML = `
