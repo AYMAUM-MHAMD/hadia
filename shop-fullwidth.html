@@ -811,7 +811,7 @@
             <div class="product-card border p-2 text-center h-100" style="width: 266px; max-width: 266px; height: 450px; max-height: 450px; display: flex; flex-direction: column; justify-content: space-between; align-items: center">
               <div class="product-image mb-2">
                 <a href="product-details.html?docId=${product.documentId}">
-                  <img src="https://legendary-fun-5dfdd25abf.strapiapp.com${imgUrl}" alt="${product.name}" class="img-fluid" style="max-width: 250px; max-height: 250px; border-radius: 12px; width: 250px; height: 250px; object-fit: cover; display: block;"/>
+                  <img src="${imgUrl}" alt="${product.name}" class="img-fluid" style="max-width: 250px; max-height: 250px; border-radius: 12px; width: 250px; height: 250px; object-fit: cover; display: block;"/>
                 </a>
               </div>
               <div class="product-content" style="width: 266px; max-width: 266px; height: 150px; max-height: 150px;">
@@ -841,7 +841,7 @@
                 id: product.documentId,
                 name: product.name,
                 price: product.price,
-                img: `https://legendary-fun-5dfdd25abf.strapiapp.com${imgUrl}`,
+                img: `${imgUrl}`,
                 qty: 1,
               });
             }
