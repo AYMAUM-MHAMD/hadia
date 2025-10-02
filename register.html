@@ -885,7 +885,7 @@
 
           try {
             const response = await fetch(
-              "https://legendary-fun-5dfdd25abf.strapiapp.com/api/auth/local/register",
+              "https://abundant-duck-82b41c6d01.strapiapp.com/api/auth/local/register",
               {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -1011,7 +1011,7 @@
           const query = searchInput.value.trim();
           if (!query) return;
 
-          const apiUrl = `https://legendary-fun-5dfdd25abf.strapiapp.com/api/products?filters[name][$containsi]=${encodeURIComponent(
+          const apiUrl = `https://abundant-duck-82b41c6d01.strapiapp.com/api/products?filters[name][$containsi]=${encodeURIComponent(
             query
           )}&populate=*`;
 
@@ -1032,7 +1032,7 @@
             // عرض المنتجات
             products.forEach((product) => {
               const imageUrl = product.images?.[0]?.url
-                ? `https://legendary-fun-5dfdd25abf.strapiapp.com${product.images[0].url}`
+                ? `https://abundant-duck-82b41c6d01.strapiapp.com${product.images[0].url}`
                 : "assets/images/cart/1.jpg"; // صورة افتراضية
 
               const productHTML = `
