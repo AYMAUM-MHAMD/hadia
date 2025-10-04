@@ -956,7 +956,7 @@
               item.img
             }" width="60" style="border-radius:6px;"/></td>
             <td data-label="المنتج">${item.name}</td>
-            <td data-label="السعر"><span>$${item.price.toFixed(2)}</span></td>
+            <td data-label="السعر"><span>${item.price.toFixed(2)} د.ل</span></td>
             <td data-label="الكمية">
               <div style="display:flex; align-items:center; gap:10px; justify-content:center">
                 <button class="dec" data-id="${
@@ -970,9 +970,9 @@
                 }" style="font-size:20px">+</button>
               </div>
             </td>
-            <td data-label="الإجمالي" class="pro-subtotal"><span>$${(
+            <td data-label="الإجمالي" class="pro-subtotal"><span>${(
               item.price * item.qty
-            ).toFixed(2)}</span></td>
+            ).toFixed(2)} د.ل</span></td>
             <td data-label="إزالة"><a href="#" class="remove" data-id="${
               item.id
             }" style="color:red">🗑️</a></td>
@@ -1000,14 +1000,14 @@
 
           tr.querySelector(
             ".pro-subtotal span"
-          ).textContent = `$${subtotal.toFixed(2)}`;
+          ).textContent = `${subtotal.toFixed(2)} د.ل`;
           cart[index].qty = qty;
           total += subtotal;
         });
 
-        document.querySelector(".total-amount").textContent = `$${total.toFixed(
+        document.querySelector(".total-amount").textContent = `${total.toFixed(
           2
-        )}`;
+        )} د.ل`;
         localStorage.setItem("cart", JSON.stringify(cart));
         renderMiniCart();
       }
@@ -1124,7 +1124,7 @@
               <div class="cart-text-btn d-flex justify-content-between">
                 <div class="cart-qty">
                   <span>${item.qty}×</span>
-                  <span class="cart-price">$${item.price.toFixed(2)}</span>
+                  <span class="cart-price">${item.price.toFixed(2)} د.ل</span>
                 </div>
                 <button class="mini-remove" data-id="${
                   item.id
@@ -1137,7 +1137,7 @@
 
         if (countEl)
           countEl.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
-        if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+        if (totalEl) totalEl.textContent = `${total.toFixed(2)} د.ل`;
       }
 
       // حذف منتج من الهيدر
@@ -1187,7 +1187,7 @@
             // عرض المنتجات
             products.forEach((product) => {
               const imageUrl = product.images?.[0]?.url
-                ? `https://abundant-duck-82b41c6d01.strapiapp.com${product.images[0].url}`
+                ? `${product.images[0].url}`
                 : "assets/images/cart/1.jpg"; // صورة افتراضية
 
               const productHTML = `

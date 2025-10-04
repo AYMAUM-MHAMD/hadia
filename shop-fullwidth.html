@@ -819,7 +819,7 @@
                   <a href="product-details.html?docId=${product.documentId}" style="font-size: 22px;">${product.name}</a>
                 </h4>
                 <div class="price-box mb-2">
-                  <span class="regular-price" style="font-size: 20px">${product.price} د.ل</span>
+                  <span class="regular-price" style="font-size: 20px">د.ل ${product.price}</span>
                 </div>
                 <a href="#" class="btn btn-sm btn-primary product-cart" style="font-size: 18px;">إضافة للسلة</a>
               </div>
@@ -971,7 +971,7 @@
               <div class="cart-text-btn d-flex justify-content-between">
                 <div class="cart-qty">
                   <span>${item.qty}×</span>
-                  <span class="cart-price">$${item.price.toFixed(2)}</span>
+                  <span class="cart-price">${item.price.toFixed(2)} د.ل</span>
                 </div>
                 <button class="mini-remove" data-id="${
                   item.id
@@ -984,7 +984,7 @@
 
         if (countEl)
           countEl.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
-        if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+        if (totalEl) totalEl.textContent = `${total.toFixed(2)} د.ل`;
       }
 
       // حذف منتج من الهيدر
@@ -1034,7 +1034,7 @@
             // عرض المنتجات
             products.forEach((product) => {
               const imageUrl = product.images?.[0]?.url
-                ? `https://abundant-duck-82b41c6d01.strapiapp.com${product.images[0].url}`
+                ? `${product.images[0].url}`
                 : "assets/images/cart/1.jpg"; // صورة افتراضية
 
               const productHTML = `

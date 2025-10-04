@@ -1095,7 +1095,7 @@
               <div class="cart-text-btn d-flex justify-content-between">
                 <div class="cart-qty">
                   <span>${item.qty}×</span>
-                  <span class="cart-price">$${item.price.toFixed(2)}</span>
+                  <span class="cart-price">${item.price.toFixed(2)} د.ل</span>
                 </div>
                 <button class="mini-remove" data-id="${
                   item.id
@@ -1108,7 +1108,7 @@
 
         if (countEl)
           countEl.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
-        if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+        if (totalEl) totalEl.textContent = `${total.toFixed(2)} د.ل`;
       }
 
       // حذف منتج من الهيدر
@@ -1158,7 +1158,7 @@
             // عرض المنتجات
             products.forEach((product) => {
               const imageUrl = product.images?.[0]?.url
-                ? `https://abundant-duck-82b41c6d01.strapiapp.com${product.images[0].url}`
+                ? `${product.images[0].url}`
                 : "assets/images/cart/1.jpg"; // صورة افتراضية
 
               const productHTML = `
